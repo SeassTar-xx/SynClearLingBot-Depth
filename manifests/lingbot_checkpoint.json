@@ -1,0 +1,26 @@
+{
+  "model_page": "https://modelscope.cn/models/Robbyant/lingbot-depth",
+  "checkpoint_model_id": "Robbyant/lingbot-depth-pretrain-vitl-14",
+  "source": "ModelScope official linked model",
+  "revision": "master",
+  "downloaded_at_utc": "2026-07-16T15:41:49.718259+00:00",
+  "files": [
+    {
+      "path": "models/lingbot-depth-v0.5/README.md",
+      "bytes": 3723,
+      "sha256": "8ec464d9625ab5d43afcdd5fe8a647f681f523aa5f98afc29fb50525cc833494"
+    },
+    {
+      "path": "models/lingbot-depth-v0.5/configuration.json",
+      "bytes": 74,
+      "sha256": "944986533b1b698d0eaacce7c0fbcd981c94f4ad71ec72f26eb0f376ade7ec23"
+    },
+    {
+      "path": "models/lingbot-depth-v0.5/model.pt",
+      "bytes": 1284841262,
+      "sha256": "6ab1da5822e4fea712202616d1f3b683ce4b2f7f82ea58fb3f5ebd7cfae9c0e0"
+    }
+  ],
+  "total_bytes": 1284845059,
+  "status": "verified"
+}

@@ -1,0 +1,18 @@
+{
+  "official_url": "https://github.com/robbyant/lingbot-depth",
+  "remote": "https://github.com/robbyant/lingbot-depth",
+  "branch": "main",
+  "commit": "f3a237e434ae987bc38281476d6cfb5df3e4d739",
+  "status": "",
+  "license": "LICENSE",
+  "examples": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ]
+}

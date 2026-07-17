@@ -1,0 +1,31 @@
+# Data, model weights, and derived run artifacts
+data/
+models/
+runs/
+repos/
+papers/
+.cache/
+.nv/
+logs/
+tmp/
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.npy
+*.ply
+
+# SSH keys and private material
+.ssh/
+*.pem
+*.key
