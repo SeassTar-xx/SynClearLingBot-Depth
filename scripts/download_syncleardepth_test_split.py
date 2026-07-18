@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import argparse,csv,json,os,pathlib,shutil,struct,sys,time,urllib.request,zipfile,zlib,io,threading
 from concurrent.futures import ThreadPoolExecutor,as_completed
-R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve();URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip';LOG=R/'logs/syncleardepth_test_download.log';LOCK=threading.Lock();PROXY={'http':'http://127.0.0.1:7897','https':'http://127.0.0.1:7897'}
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve();URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip';LOG=R/'logs/syncleardepth_test_download.log';LOCK=threading.Lock();PROXY={'http':'http://127.0.0.1:7897','https':'http://127.0.0.1:7897'};TRANSPORT='direct'
 class RR(io.RawIOBase):
- def __init__(self,n):self.n=n;self.p=0;self.op=urllib.request.build_opener(urllib.request.ProxyHandler(PROXY))
+ def __init__(self,n):self.n=n;self.p=0;self.op=urllib.request.build_opener(urllib.request.ProxyHandler({} if TRANSPORT=='direct' else PROXY))
  def readable(self):return True
  def seekable(self):return True
  def tell(self):return self.p
@@ -54,7 +54,7 @@ def get(name,info,root,size):
   if part.stat().st_size!=info.file_size or crc(part)!=info.CRC:raise RuntimeError('size/CRC mismatch')
   os.replace(part,d);return name,'downloaded'
  except Exception as e:return name,'failed:'+repr(e)
-p=argparse.ArgumentParser();p.add_argument('--split',required=True);p.add_argument('--source',default='auto');p.add_argument('--resume',action='store_true');p.add_argument('--workers',type=int,default=8);a=p.parse_args();out=R/'data/syncleardepth/raw_subset';out.mkdir(parents=True,exist_ok=True)
+p=argparse.ArgumentParser();p.add_argument('--split',required=True);p.add_argument('--source',default='auto');p.add_argument('--resume',action='store_true');p.add_argument('--workers',type=int,default=8);p.add_argument('--transport',choices=('direct','proxy'),default='direct');a=p.parse_args();TRANSPORT=a.transport;out=R/'data/syncleardepth/raw_subset';out.mkdir(parents=True,exist_ok=True)
 rows=[json.loads(x) for x in pathlib.Path(a.split).read_text().splitlines() if x];need={v for x in rows for k,v in x.items() if k in {'left_rgb_member','right_rgb_member','gt_depth_member','segmentation_member','instance_mask_member','normal_member','scene_info_member'} and v};size=json.loads((R/'manifests/syncleardepth_archive_summary.json').read_text())['archive_content_length'];z=zipfile.ZipFile(RR(size));infos={x.filename:x for x in z.infolist()};missing=need-set(infos)
 if missing:raise SystemExit(f'missing index entries: {len(missing)}')
 res=[]
