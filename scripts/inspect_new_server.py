@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os, pathlib, platform, shutil, subprocess
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve(); out=R/'logs/new_server_environment.txt'
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve(); out=R/'logs/new_server_environment.txt'
 def run(*c):
  try:return subprocess.run(c,text=True,capture_output=True,timeout=30).stdout+subprocess.run(c,text=True,capture_output=True,timeout=30).stderr
  except Exception as e:return repr(e)+'\n'

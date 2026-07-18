@@ -1,5 +1,5 @@
 import csv,json,pathlib,collections,re
-R=pathlib.Path("/home/liuke/xuxin/depth_io_inspection").resolve();L=R/"manifests/syncleardepth_archive_listing.tsv";O=R/"manifests"
+R=pathlib.Path("/home/liuke/xuxin/SynClearLingBot-Depth").resolve();L=R/"manifests/syncleardepth_archive_listing.tsv";O=R/"manifests"
 rx=re.compile(r"^(Image|depth|segmentation|normal|disparity)(\d+)(?:_([LR]))?\.(png|exr|npy)$",re.I);ss=collections.defaultdict(dict);mm={}
 for x in csv.DictReader(L.open(),delimiter="\t"):
  p=pathlib.PurePosixPath(x["archive_path"]);q=p.parts

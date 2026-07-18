@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import csv,json,pathlib,collections
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve();o=R/'data/syncleardepth/test_split';allx=[json.loads(x) for x in (R/'manifests/syncleardepth_all_samples.jsonl').read_text().splitlines() if x.strip()];test=[json.loads(x) for x in (o/'test_samples.jsonl').read_text().splitlines() if x.strip()]
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve();o=R/'data/syncleardepth/test_split';allx=[json.loads(x) for x in (R/'manifests/syncleardepth_all_samples.jsonl').read_text().splitlines() if x.strip()];test=[json.loads(x) for x in (o/'test_samples.jsonl').read_text().splitlines() if x.strip()]
 rows=[]
 for field in ['scene','sequence','object_count']:
  a=collections.Counter(str(x.get(field,'unknown')) for x in allx);b=collections.Counter(str(x.get(field,'unknown')) for x in test)

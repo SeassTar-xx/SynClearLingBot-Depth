@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Range-only SynClearDepth ZIP central-directory indexer; never downloads the ZIP body."""
 import argparse,collections,csv,json,pathlib,time,urllib.request,zipfile,io
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve(); URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip'
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve(); URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip'
 class RR(io.RawIOBase):
  def __init__(self,url,size): self.url,self.size,self.pos,self.bytes=url,size,0,0
  def seekable(self): return True

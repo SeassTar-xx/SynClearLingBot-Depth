@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import hashlib,json,pathlib,subprocess,sys,datetime,os
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve(); T=R/'models/lingbot-depth-v0.5'; log=R/'logs/lingbot_v05_download.log'; expected=1284837952; known='b60cf27ddbd0e51e9b59b03475c0d39d02d2e48ecf8dbb5866f04d46802b3c23'
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve(); T=R/'models/lingbot-depth-v0.5'; log=R/'logs/lingbot_v05_download.log'; expected=1284837952; known='b60cf27ddbd0e51e9b59b03475c0d39d02d2e48ecf8dbb5866f04d46802b3c23'
 def sha(p):
  h=hashlib.sha256()
  with p.open('rb') as f:

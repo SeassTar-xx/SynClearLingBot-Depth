@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse,csv,json,os,pathlib,shutil,struct,sys,time,urllib.request,zipfile,zlib,io,threading
 from concurrent.futures import ThreadPoolExecutor,as_completed
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve();URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip';LOG=R/'logs/syncleardepth_test_download.log';LOCK=threading.Lock();PROXY={'http':'http://127.0.0.1:7897','https':'http://127.0.0.1:7897'}
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve();URL='https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip';LOG=R/'logs/syncleardepth_test_download.log';LOCK=threading.Lock();PROXY={'http':'http://127.0.0.1:7897','https':'http://127.0.0.1:7897'}
 class RR(io.RawIOBase):
  def __init__(self,n):self.n=n;self.p=0;self.op=urllib.request.build_opener(urllib.request.ProxyHandler(PROXY))
  def readable(self):return True

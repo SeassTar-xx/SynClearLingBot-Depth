@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import csv, pathlib, re, subprocess
-ROOT=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve(); OLD=('/mnt/20t/xuxin/depth_io_inspection','/mnt/20t/xuxin/cleardepth_pilot','/mnt/20t/xuxin/','mistral-rev')
+ROOT=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve(); OLD=('/mnt/20t/xuxin/depth_io_inspection','/mnt/20t/xuxin/cleardepth_pilot','/mnt/20t/xuxin/','mistral-rev')
 TEXT={'.py','.sh','.json','.jsonl','.yaml','.yml','.toml','.md','.txt','.csv','.tsv','.html','.ipynb'}
 def safe(p):
  q=p.resolve(strict=False); return q==ROOT or ROOT in q.parents

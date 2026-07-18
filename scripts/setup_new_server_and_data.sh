@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-ROOT=/home/liuke/xuxin/depth_io_inspection
+ROOT=/home/liuke/xuxin/SynClearLingBot-Depth
 . "$ROOT/scripts/env.sh"
 python "$ROOT/scripts/inspect_new_server.py"
 python "$ROOT/scripts/migrate_paths.py"

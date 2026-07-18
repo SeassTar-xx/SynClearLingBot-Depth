@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse,csv,hashlib,json,pathlib,random,datetime
-R=pathlib.Path('/home/liuke/xuxin/depth_io_inspection').resolve()
+R=pathlib.Path('/home/liuke/xuxin/SynClearLingBot-Depth').resolve()
 p=argparse.ArgumentParser();p.add_argument('--all-samples',default=str(R/'manifests/syncleardepth_all_samples.jsonl'));p.add_argument('--ratio',type=float,default=.2);p.add_argument('--seed',type=int,default=20260718);p.add_argument('--split-name',default='test_20pct_v1');p.add_argument('--group-key',default='auto');p.add_argument('--list-only',action='store_true');a=p.parse_args(); out=R/'data/syncleardepth/test_split'
 if a.split_name!='test_20pct_v1': raise SystemExit('Only requested immutable v1 supported by this command')
 if (out/'test_ids.txt').exists(): raise SystemExit('v1 exists: refusing silent overwrite')

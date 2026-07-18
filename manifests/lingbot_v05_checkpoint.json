@@ -3,7 +3,7 @@
   "model_id": "Robbyant/lingbot-depth-pretrain-vitl-14-v0.5",
   "source": "https://modelscope.cn/models/Robbyant/lingbot-depth-pretrain-vitl-14-v0.5",
   "checked_at": "2026-07-18T04:45:08.448804+00:00",
-  "checkpoint": "/home/liuke/xuxin/depth_io_inspection/models/lingbot-depth-v0.5/model.pt",
+  "checkpoint": "/home/liuke/xuxin/SynClearLingBot-Depth/models/lingbot-depth-v0.5/model.pt",
   "size_bytes": 1284837952,
   "sha256": "b60cf27ddbd0e51e9b59b03475c0d39d02d2e48ecf8dbb5866f04d46802b3c23",
   "expected_size_bytes": 1284837952,

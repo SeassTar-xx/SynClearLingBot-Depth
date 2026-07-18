@@ -1,4 +1,4 @@
-export ROOT=/home/liuke/xuxin/depth_io_inspection
+export ROOT=/home/liuke/xuxin/SynClearLingBot-Depth
 export HOME=$ROOT/home
 export TMPDIR=$ROOT/tmp
 export XDG_CACHE_HOME=$ROOT/.cache
