@@ -1,12 +1,18 @@
-# Data, model weights, and derived run artifacts
-data/
-models/
+# Local datasets, model weights, generated predictions, and third-party clones
+data/*
+!data/README.md
+models/*
+!models/README.md
+outputs/*
+!outputs/README.md
 runs/
 repos/
 papers/
+gallery/
 .cache/
 .nv/
-logs/
+logs/*
+!logs/README.md
 tmp/
 
 # Local environments and credentials

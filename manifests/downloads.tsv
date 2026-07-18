@@ -1,4 +1,4 @@
-resource_name	local_path	size_bytes	sha256	status	notes
-ClearDepth.pdf	papers/ClearDepth.pdf	6269333	1ab909c10487e7c4bbbb922559344c2281c83f97b3eb992b91677cac66382277	downloaded	arXiv official PDF
-LingBot-Depth.pdf	papers/LingBot-Depth.pdf	0		blocked	arXiv transfer persistently slow; stopped
-lingbot-depth-v0.5 checkpoint	models/lingbot-depth-v0.5	0		blocked	ModelScope not reached; Hugging Face timed out
+resource_name	source	model_or_paper_id	status	notes
+ClearDepth paper	https://arxiv.org/abs/2409.08926	2409.08926	local reference only	PDF intentionally excluded from Git
+LingBot-Depth v0.5	https://modelscope.cn/models/Robbyant/lingbot-depth-pretrain-vitl-14-v0.5	Robbyant/lingbot-depth-pretrain-vitl-14-v0.5	verified local checkpoint	Weights intentionally excluded from Git; exact hash in lingbot_v05_checkpoint.json
+Official LingBot code	https://github.com/robbyant/lingbot-depth	robbyant/lingbot-depth	cloned locally	Third-party clone intentionally excluded from Git

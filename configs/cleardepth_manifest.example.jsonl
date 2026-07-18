@@ -1,0 +1,1 @@
+{"sample_id":"transparent_dataset/example_scene::0000","rgb":"/absolute/path/to/Image0000_L.png","input_depth":"/absolute/path/to/stereo_depth0000_L.npy","input_depth_unit":"m","gt_depth":"/absolute/path/to/depth0000_L.exr","transparent_mask":"/absolute/path/to/segmentation0000_L.png","intrinsics":"/absolute/path/to/intrinsics.txt","intrinsics_normalized":false}

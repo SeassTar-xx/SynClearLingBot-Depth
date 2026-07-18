@@ -1,12 +1,10 @@
 # Start here
 
-This public repository contains the inspection tooling and documentation only.
-The data, model weights, third-party clone, and generated outputs listed below
-are deliberately not included.
+1. Obtain the full SynClearDepth data and place it below `data/cleardepth/` (ignored by Git).
+2. Prepare a manifest from `configs/cleardepth_manifest.example.jsonl`.
+3. Produce an aligned, non-GT-leaking raw depth map for every left RGB image, for example with an independent calibrated stereo baseline.
+4. Run `scripts/validate_project.py` on the manifest.
+5. Run `scripts/run_lingbot_on_cleardepth.py`.
+6. Evaluate the generated prediction index using `scripts/evaluate_depth.py`.
 
-1. Gallery: `gallery/index.html`
-2. ClearDepth samples: `data/cleardepth_examples/`
-3. LingBot source: `repos/lingbot-depth/examples/0/` when clone completes
-4. LingBot outputs: `runs/lingbot_official_example_0/` (not available)
-5. Formats: `IO_GUIDE.md`
-6. ClearDepth release audit: `cleardepth_resources/OFFICIAL_RELEASE_STATUS.md`
+Do not use GT depth as the `input_depth` field. It is reserved for evaluation.

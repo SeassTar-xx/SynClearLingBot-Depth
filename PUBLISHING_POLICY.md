@@ -1,10 +1,7 @@
 # Publishing policy
 
-This repository contains inspection scripts, manifests, reports, and static
-documentation for ClearDepth and LingBot-Depth I/O work.
+This repository contains reproducible scripts, configuration templates, manifests, and documentation for evaluating LingBot-Depth on ClearDepth.
 
-It intentionally excludes datasets, model checkpoints and weights, model
-outputs, derived point clouds, third-party source clones, cached downloads,
-papers, logs, local environments, and credentials. Obtain external data,
-models, source code, and papers from their original publishers under their
-respective licenses and terms.
+It intentionally excludes datasets, model checkpoints and weights, raw stereo depth, predictions, rendered visualizations, point clouds, third-party source clones, logs, caches, local environments, and credentials. Obtain ClearDepth, LingBot-Depth, and any stereo baseline from their official publishers under their own licences and terms.
+
+The repository may contain only small text templates under `data/`, `models/`, `outputs/`, and `logs/`; no experiment data or weights are committed.

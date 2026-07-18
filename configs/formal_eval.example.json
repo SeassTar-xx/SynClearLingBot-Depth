@@ -1,0 +1,11 @@
+{
+  "checkpoint": "models/lingbot-depth-v0.5/v0.5/model.pt",
+  "official_repo": "repos/lingbot-depth",
+  "manifest": "data/cleardepth/formal_eval.jsonl",
+  "output_dir": "outputs/formal_eval",
+  "device": "cuda:0",
+  "resolution_level": 9,
+  "apply_mask": false,
+  "native_sdpa": false,
+  "disable_depth_masking": false
+}
