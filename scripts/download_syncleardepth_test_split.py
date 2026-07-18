@@ -38,7 +38,19 @@ def get(name,info,root,size):
  if d.exists() and d.is_file() and d.stat().st_size==info.file_size and crc(d)==info.CRC:return name,'resume_valid'
  part=d.with_name(d.name+'.part')
  try:
-  with zipfile.ZipExtFile(RR(size),'r',info,None,True) as src,part.open('wb') as out:shutil.copyfileobj(src,out,8<<20)
+  # Reuse the manifest's central-directory entry and seek the range-backed
+  # reader to this member's compressed payload.  Reopening ZipFile here would
+  # fetch the 20 MiB central directory once per member.
+  rr=RR(size)
+  rr.seek(info.header_offset)
+  local_header=rr.read(zipfile.sizeFileHeader)
+  if len(local_header)!=zipfile.sizeFileHeader: raise RuntimeError('truncated local header')
+  fields=struct.unpack(zipfile.structFileHeader, local_header)
+  if fields[zipfile._FH_SIGNATURE]!=zipfile.stringFileHeader: raise RuntimeError('bad local header')
+  data_offset=info.header_offset+zipfile.sizeFileHeader+fields[zipfile._FH_FILENAME_LENGTH]+fields[zipfile._FH_EXTRA_FIELD_LENGTH]
+  rr.seek(data_offset)
+  with zipfile.ZipExtFile(rr,'r',info,None,True) as src, part.open('wb') as out:
+   shutil.copyfileobj(src,out,8<<20)
   if part.stat().st_size!=info.file_size or crc(part)!=info.CRC:raise RuntimeError('size/CRC mismatch')
   os.replace(part,d);return name,'downloaded'
  except Exception as e:return name,'failed:'+repr(e)
