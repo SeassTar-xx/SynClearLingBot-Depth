@@ -1,1 +1,3 @@
-Runtime logs are local and ignored by Git. Do not write tokens or credentials into logs.
+# 本地日志目录
+
+环境检查、网络探测、下载过程和运行日志写入此处。日志可能包含机器路径或运行细节，默认不提交；不得写入令牌、密码或其他凭证。

@@ -35,3 +35,26 @@ __pycache__/
 .ssh/
 *.pem
 *.key
+models/
+data/syncleardepth/raw_subset/
+.cache/
+.venv/
+tmp/
+runs/
+*.pt
+*.pth
+*.ckpt
+*.exr
+*.zip
+*.part
+
+# 固定测试集的轻量可复现定义：允许提交；原始成员数据继续忽略。
+!data/syncleardepth/
+data/syncleardepth/*
+!data/syncleardepth/test_split/
+!data/syncleardepth/test_split/*.txt
+!data/syncleardepth/test_split/*.json
+!data/syncleardepth/test_split/*.jsonl
+!data/syncleardepth/test_split/*.csv
+!data/syncleardepth/test_split/*.md
+!data/syncleardepth/README.md

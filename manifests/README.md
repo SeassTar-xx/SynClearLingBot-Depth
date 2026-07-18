@@ -1,3 +1,3 @@
-# Manifests
+# 清单文件
 
-The JSON manifests record public sources and verified checkpoint provenance. Hashes may refer to excluded local files so that a user can verify their own download; no model weight, dataset, or third-party source is committed.
+JSON 清单记录公开数据源和已验证 checkpoint 的来源信息。哈希值可能指向未提交的本地文件，便于用户验证自己的下载；仓库不会提交模型权重、数据集或第三方源码。

@@ -1,1 +1,3 @@
-Inference predictions, metric files, visualizations, and logs are written here. This directory is ignored by Git.
+# 本地输出目录
+
+推理预测、深度指标、可视化、点云和中间结果写入此处。它们依赖本地数据和模型、体积可能很大，因此始终被 Git 忽略。

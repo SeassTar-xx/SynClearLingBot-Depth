@@ -1,0 +1,7 @@
+file	line_number	old_text	suggested_replacement
+scripts/migrate_paths.py	3	/mnt/20t/xuxin/depth_io_inspection	use ROOT environment variable/pathlib
+scripts/migrate_paths.py	3	/mnt/20t/xuxin/cleardepth_pilot	use ROOT environment variable/pathlib
+scripts/migrate_paths.py	3	/mnt/20t/xuxin/	use ROOT environment variable/pathlib
+scripts/migrate_paths.py	3	mistral-rev	use ROOT environment variable/pathlib
+reports/FORMAL_EVALUATION.md	34	/mnt/20t/xuxin/depth_io_inspection	legacy: retain with annotation
+reports/FORMAL_EVALUATION.md	34	/mnt/20t/xuxin/	legacy: retain with annotation

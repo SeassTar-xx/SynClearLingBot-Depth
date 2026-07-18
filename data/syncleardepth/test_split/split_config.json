@@ -1,0 +1,17 @@
+{
+  "dataset": "SynClearDepth",
+  "split_name": "test_20pct_v1",
+  "seed": 20260718,
+  "target_ratio": 0.2,
+  "actual_ratio": 0.20820007675578867,
+  "group_key": "sequence",
+  "stratification_fields": [
+    "scene",
+    "sequence",
+    "object_count (when available)"
+  ],
+  "selection_algorithm_version": "1.0 deterministic scene-local group hash",
+  "archive_url": "https://tams.informatik.uni-hamburg.de/research/datasets/cleardepth_dataset/transparent_dataset1.zip",
+  "created_at": "2026-07-18T05:52:54.078874+00:00",
+  "limitations": []
+}

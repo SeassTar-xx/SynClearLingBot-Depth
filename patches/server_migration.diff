@@ -1,0 +1,25 @@
+diff --git a/scripts/env.sh b/scripts/env.sh
+old mode 100755
+new mode 100644
+index 6b16cc0..3c1c1e7
+--- a/scripts/env.sh
++++ b/scripts/env.sh
+@@ -1,5 +1,13 @@
+-#!/usr/bin/env bash
+-set -euo pipefail
+-ROOT=/mnt/20t/xuxin/depth_io_inspection
+-[ "$(realpath -e "$ROOT")" = "$ROOT" ] && [ ! -L "$ROOT" ]
+-export HOME="$ROOT/home" TMPDIR="$ROOT/tmp" XDG_CACHE_HOME="$ROOT/.cache" PIP_CACHE_DIR="$ROOT/.cache/pip" HF_HOME="$ROOT/.cache/huggingface" HUGGINGFACE_HUB_CACHE="$ROOT/.cache/huggingface/hub" MODELSCOPE_CACHE="$ROOT/.cache/modelscope" TORCH_HOME="$ROOT/.cache/torch" MPLCONFIGDIR="$ROOT/.cache/matplotlib" CUDA_CACHE_PATH="$ROOT/.cache/cuda" PYTHONPYCACHEPREFIX="$ROOT/.cache/pycache"
++export ROOT=/home/liuke/xuxin/depth_io_inspection
++export HOME=$ROOT/home
++export TMPDIR=$ROOT/tmp
++export XDG_CACHE_HOME=$ROOT/.cache
++export PIP_CACHE_DIR=$ROOT/.cache/pip
++export HF_HOME=$ROOT/.cache/huggingface
++export HUGGINGFACE_HUB_CACHE=$ROOT/.cache/huggingface/hub
++export MODELSCOPE_CACHE=$ROOT/.cache/modelscope
++export TORCH_HOME=$ROOT/.cache/torch
++export MPLCONFIGDIR=$ROOT/.cache/matplotlib
++export CUDA_CACHE_PATH=$ROOT/.cache/cuda
++export PYTHONPYCACHEPREFIX=$ROOT/.cache/pycache
++export PATH=$ROOT/.venv/bin:$PATH

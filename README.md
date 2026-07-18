@@ -1,24 +1,14 @@
-# ClearDepth / LingBot-Depth evaluation
+# ClearDepth / LingBot-Depth 评测项目
 
-This repository provides a clean, manifest-driven framework for evaluating **LingBot-Depth v0.5** on ClearDepth without leaking GT depth into the model input.
+本仓库提供一套基于清单文件的可复现流程，用于在不向模型输入 GT 深度的前提下，评测 **LingBot-Depth v0.5** 在 SynClearDepth 上的深度补全与细化能力。
 
-The formal protocol is:
+正式流程为：
 
 ```text
-rectified ClearDepth left/right RGB + calibration
-  -> independent stereo baseline
-  -> aligned raw/incomplete metric depth
-  -> LingBot-Depth (left RGB + input depth)
-  -> predicted metric depth
-  -> GT-only evaluation
+校正后的左右 RGB 与相机标定
+  → 独立双目基线
+  → 对齐的原始/不完整度量深度
+  → LingBot-Depth（左 RGB 与输入深度）
+  → 预测的度量深度
+  → 仅使用 GT 的评测
 ```
-
-Start with [Formal evaluation guide](reports/FORMAL_EVALUATION.md). The repository excludes all datasets, model weights, third-party clones, run outputs, and logs; see [PUBLISHING_POLICY.md](PUBLISHING_POLICY.md).
-
-## Main entry points
-
-- `configs/cleardepth_manifest.example.jsonl` — one-sample-per-line manifest schema.
-- `scripts/run_lingbot_on_cleardepth.py` — manifest-driven LingBot inference.
-- `scripts/evaluate_depth.py` — MAE, RMSE, AbsRel, delta1, coverage, and optional foreground/background metrics.
-- `scripts/validate_project.py` — validates a formal manifest before GPU use.
-- `scripts/env.sh` — redirects caches and temporary files into this project root.
