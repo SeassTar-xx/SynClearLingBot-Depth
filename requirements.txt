@@ -1,0 +1,23 @@
+# Install project dependencies only inside the local virtual environment (.venv).
+# CUDA 11.8 wheels are compatible with the original NVIDIA 535 / CUDA 12.2 environment.
+--index-url https://download.pytorch.org/whl/cu118
+--extra-index-url https://pypi.org/simple
+
+# LingBot-Depth 推理
+torch==2.6.0+cu118
+torchvision==0.21.0+cu118
+xformers==0.0.29.post2
+-e ./repos/lingbot-depth
+
+# SynClearDepth stereo disparity, EXR ground-truth reading, and image validation
+numpy==1.26.4
+opencv-python-headless==4.11.0.86
+scipy==1.14.1
+matplotlib==3.9.2
+trimesh==4.5.1
+Pillow==9.0.1
+
+# Model loading and command-line utilities
+huggingface_hub==1.24.0
+click==8.4.2
+tqdm==4.69.0

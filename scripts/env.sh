@@ -1,13 +1,16 @@
-export ROOT=/home/liuke/xuxin/SynClearLingBot-Depth
-export HOME=$ROOT/home
-export TMPDIR=$ROOT/tmp
-export XDG_CACHE_HOME=$ROOT/.cache
-export PIP_CACHE_DIR=$ROOT/.cache/pip
-export HF_HOME=$ROOT/.cache/huggingface
-export HUGGINGFACE_HUB_CACHE=$ROOT/.cache/huggingface/hub
-export MODELSCOPE_CACHE=$ROOT/.cache/modelscope
-export TORCH_HOME=$ROOT/.cache/torch
-export MPLCONFIGDIR=$ROOT/.cache/matplotlib
-export CUDA_CACHE_PATH=$ROOT/.cache/cuda
-export PYTHONPYCACHEPREFIX=$ROOT/.cache/pycache
-export PATH=$ROOT/.venv/bin:$PATH
+#!/usr/bin/env bash
+# Source this file to set ROOT automatically to the current repository location.
+_SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+export ROOT="$(cd -- "${_SCRIPT_DIR}/.." && pwd -P)"
+export HOME="$ROOT/home"
+export TMPDIR="$ROOT/tmp"
+export XDG_CACHE_HOME="$ROOT/.cache"
+export PIP_CACHE_DIR="$ROOT/.cache/pip"
+export HF_HOME="$ROOT/.cache/huggingface"
+export HUGGINGFACE_HUB_CACHE="$ROOT/.cache/huggingface/hub"
+export MODELSCOPE_CACHE="$ROOT/.cache/modelscope"
+export TORCH_HOME="$ROOT/.cache/torch"
+export MPLCONFIGDIR="$ROOT/.cache/matplotlib"
+export CUDA_CACHE_PATH="$ROOT/.cache/cuda"
+export PYTHONPYCACHEPREFIX="$ROOT/.cache/pycache"
+export PATH="$ROOT/.venv/bin:$PATH"

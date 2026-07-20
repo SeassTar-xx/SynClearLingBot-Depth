@@ -1,14 +1,19 @@
-# ClearDepth / LingBot-Depth 评测项目
+# SynClearLingBot-Depth
 
-本仓库提供一套基于清单文件的可复现流程，用于在不向模型输入 GT 深度的前提下，评测 **LingBot-Depth v0.5** 在 SynClearDepth 上的深度补全与细化能力。
+本项目在固定的 SynClearDepth 测试子集上，使用 StereoSGBM 从左右视图计算 raw depth，并将左视图与 raw depth 输入 LingBot-Depth v0.5，评测预测 depth 与 GT depth 的 RMSE 和 MAE。运行过程会按固定 sample ID 选择性获取数据、校验官方模型、缓存 raw depth，并支持中断后恢复。
 
-正式流程为：
+## Quick Start
 
-```text
-校正后的左右 RGB 与相机标定
-  → 独立双目基线
-  → 对齐的原始/不完整度量深度
-  → LingBot-Depth（左 RGB 与输入深度）
-  → 预测的度量深度
-  → 仅使用 GT 的评测
+```bash
+git clone https://github.com/SeassTar-xx/SynClearLingBot-Depth.git
+cd SynClearLingBot-Depth
+
+git clone --depth 1 https://github.com/Robbyant/lingbot-depth repos/lingbot-depth
+
+python3.10 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+
+bash scripts/run_depth_evaluation_pipeline.sh
 ```

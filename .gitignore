@@ -11,8 +11,7 @@ papers/
 gallery/
 .cache/
 .nv/
-logs/*
-!logs/README.md
+logs/
 tmp/
 
 # Local environments and credentials
@@ -48,7 +47,7 @@ runs/
 *.zip
 *.part
 
-# 固定测试集的轻量可复现定义：允许提交；原始成员数据继续忽略。
+# Keep the lightweight fixed test-split definition versioned; continue ignoring raw data members.
 !data/syncleardepth/
 data/syncleardepth/*
 !data/syncleardepth/test_split/
